@@ -32,8 +32,10 @@ contract Location {
     function pay() public payable {
         for(uint256 i = 0; i < players.length; i++){
          address employeeAddress = employees[i];
-         require(!inPlace(employeeAddress));
-         }
+         if (require(inPlace(employeeAddress))) {
+            employeeAddress.transfer(0.1);
+         } 
+        }
                 
     }
 
