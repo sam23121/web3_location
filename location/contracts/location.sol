@@ -19,11 +19,9 @@ contract Location {
 
     mapping(address => Employee) public employeeInfo;
 
-    function inPlace(address employee) public constant returns(bool){
-      for(uint256 i = 0; i < Employee.length; i++){
-         if(Employee[i].latitude > minGeolatitude &  Employee[i].latitude < maxGeolatitude & Employee[i].longitudes > minGeoLongtitude &  Employee[i].longitudes < maxGeolongitudes) return true;
-      }
-      return false;
+    function inPlace(address employee) public constant returns(bool){ 
+        if(employeeInfo[employee].latitude > minGeolatitude &  employeeInfo[employee].latitude < maxGeolatitude & employeeInfo[employee].longtitude > minGeoLongtitude &  employeeInfo[employee].longtitude < maxGeolongitudes) return true; 
+        else return false;
    }
 
     function _createEmployee(string memory _name, int _longtitude, int _latitude) private {
@@ -32,7 +30,11 @@ contract Location {
     } 
 
     function pay() public payable {
-        require(!inPlace(msg.sender));        
+        for(uint256 i = 0; i < players.length; i++){
+         address employeeAddress = employees[i];
+         require(!inPlace(employeeAddress));
+         }
+                
     }
 
 }
