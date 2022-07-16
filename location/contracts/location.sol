@@ -4,10 +4,10 @@ contract Location {
 
     event NewEmployee(uint EmployeeId, string name, int latitude, int longtitude);
 
-    int256 public maxGeoLatitude;
-    int256 public minGeoLatitude;
-    int256 public maxGeolongitudes;
-    int256 public minGeoLongtitude;
+    int256 public maxGeoLatitude = 10; // boundrites
+    int256 public minGeoLatitude = 10;
+    int256 public maxGeolongitudes = 10;
+    int256 public minGeoLongtitude = 10 ;
 
     struct Employee {
         int256 latitude;
