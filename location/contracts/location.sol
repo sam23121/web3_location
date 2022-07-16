@@ -1,12 +1,12 @@
-pragma solidity >=0.4.25 <0.6.0;
+pragma solidity 0.8.7;
 
 contract Location {
 
-    event NewEmployee(uint EmployeeId, string name, int latitude, int longtitude);
+    event NewEmployee(uint EmployeeId, string name, int latitude, int longitude);
 
-    int256 public maxGeoLatitude = 10; // boundrites
+    int256 public maxGeoLatitude = 20; // boundrites
     int256 public minGeoLatitude = 10;
-    int256 public maxGeolongitudes = 10;
+    int256 public maxGeolongitudes = 20;
     int256 public minGeoLongtitude = 10 ;
 
     struct Employee {
