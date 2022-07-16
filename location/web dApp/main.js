@@ -14,3 +14,5 @@ const findMyLocation  = () => {
     navigator.geolocation.getCurrentPosition(su)
     
 }
+
+document.querySelector('.find-state').addEventListener('click', findMyLocation);
