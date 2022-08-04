@@ -4,7 +4,7 @@ contract Location {
 
     event NewEmployee(uint EmployeeId, string name, int latitude, int longitude);
 
-    int256 public maxGeoLatitude = 20; // boundrites
+    int256 public maxGeoLatitude = 20; // boundries
     int256 public minGeoLatitude = 10;
     int256 public maxGeolongitudes = 20;
     int256 public minGeoLongtitude = 10 ;
@@ -30,7 +30,7 @@ contract Location {
     } 
 
     function pay() public payable {
-        for(uint256 i = 0; i < players.length; i++){
+        for(uint256 i = 0; i < employee.length; i++){
          address employeeAddress = employees[i];
          if (require(inPlace(employeeAddress))) {
             employeeAddress.transfer(0.1);
